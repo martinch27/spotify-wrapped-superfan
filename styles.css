@@ -272,6 +272,9 @@ body {
   width: 36px; height: 36px;
   display: flex; align-items: center; justify-content: center;
 }
+.story-btn .icon-off { display: none; }
+.story-btn.muted .icon-on { display: none; }
+.story-btn.muted .icon-off { display: block; }
 .story-logo {
   width: 28px; height: 28px;
   display: flex; align-items: center; justify-content: center;

@@ -49,12 +49,44 @@
     if (idx > 0) { idx--; renderSlide(); }
   }
 
+  /* ============ STORY AUDIO + MUTE ============ */
+  const audio = document.getElementById('storyAudio');
+  const muteBtn = document.getElementById('muteStory');
+  let isMuted = false;
+
+  function playStoryAudio() {
+    if (!audio) return;
+    audio.muted = isMuted;
+    audio.currentTime = 0;
+    // Play must be triggered from a user gesture (the Wrapped card click)
+    // for iOS Safari; .catch() swallows the silent autoplay-blocked rejection.
+    const p = audio.play();
+    if (p && p.catch) p.catch(() => {});
+  }
+  function stopStoryAudio() {
+    if (!audio) return;
+    audio.pause();
+    audio.currentTime = 0;
+  }
+  function toggleMute() {
+    isMuted = !isMuted;
+    if (audio) audio.muted = isMuted;
+    muteBtn.classList.toggle('muted', isMuted);
+    muteBtn.setAttribute('aria-label', isMuted ? 'Unmute' : 'Mute');
+  }
+  muteBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleMute();
+  });
+
   function openStory() {
     idx = 0;
     renderSlide();
     show('story');
+    playStoryAudio();
   }
   function closeStory() {
+    stopStoryAudio();
     show('home');
   }
 
@@ -74,6 +106,7 @@
   /* ============ SUPERFAN CTA → ARTIST PROFILE ============ */
   document.getElementById('becomeSuperfan').addEventListener('click', (e) => {
     e.stopPropagation();
+    stopStoryAudio();
     show('profile');
   });
 
@@ -81,6 +114,30 @@
   document.querySelectorAll('.cta-superfan, .share-btn, .story-chrome').forEach(el => {
     el.addEventListener('click', (e) => e.stopPropagation());
   });
+
+  /* ============ SHARE BUTTON (native share sheet) ============ */
+  const shareBtn = document.querySelector('.share-btn');
+  if (shareBtn) {
+    shareBtn.addEventListener('click', async (e) => {
+      e.stopPropagation();
+      const data = {
+        title: 'My 2026 Wrapped',
+        text: "I'm in the top 1% of Playboi Carti's fans this year. Check out my Spotify Wrapped 2026.",
+        url: window.location.href
+      };
+      try {
+        if (navigator.share) {
+          // Native sheet: TikTok, Instagram, WhatsApp, Messages, etc.
+          await navigator.share(data);
+        } else if (navigator.clipboard) {
+          // Desktop fallback: copy link
+          await navigator.clipboard.writeText(data.url);
+          shareBtn.textContent = 'Link copied!';
+          setTimeout(() => { shareBtn.textContent = 'Share this story'; }, 1800);
+        }
+      } catch (_) { /* user cancelled the share sheet */ }
+    });
+  }
 
   /* ============ PROFILE FEED → CHECKOUT ============ */
   document.querySelectorAll('.post-locked__cta, .post-locked').forEach(el => {
