@@ -15,13 +15,17 @@
 
   /* ============ SCREENS ============ */
   const screens = {
-    home:    document.getElementById('home'),
-    story:   document.getElementById('story'),
-    success: document.getElementById('success'),
+    home:     document.getElementById('home'),
+    story:    document.getElementById('story'),
+    profile:  document.getElementById('profile'),
+    checkout: document.getElementById('checkout'),
+    success:  document.getElementById('success'),
   };
   function show(name) {
     Object.values(screens).forEach(s => s.classList.remove('active'));
     screens[name].classList.add('active');
+    const scroller = screens[name].querySelector('.profile, .checkout, .content');
+    if (scroller) scroller.scrollTop = 0;
   }
 
   /* ============ STORY NAVIGATION ============ */
@@ -67,17 +71,41 @@
     else if (e.key === 'Escape') closeStory();
   });
 
-  /* ============ SUPERFAN CTA ============ */
+  /* ============ SUPERFAN CTA → ARTIST PROFILE ============ */
   document.getElementById('becomeSuperfan').addEventListener('click', (e) => {
     e.stopPropagation();
-    show('success');
+    show('profile');
   });
 
-  /* Stop tap zones from swallowing the SuperFan CTA click */
+  /* Stop tap zones from swallowing CTAs on story slides */
   document.querySelectorAll('.cta-superfan, .share-btn, .story-chrome').forEach(el => {
     el.addEventListener('click', (e) => e.stopPropagation());
   });
 
+  /* ============ PROFILE FEED → CHECKOUT ============ */
+  document.querySelectorAll('.post-locked__cta, .post-locked').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.stopPropagation();
+      show('checkout');
+    });
+  });
+
+  /* ============ CHECKOUT → SUCCESS ============ */
+  document.getElementById('goSuccess').addEventListener('click', (e) => {
+    const btn = e.currentTarget;
+    btn.style.opacity = '.7';
+    const html = btn.innerHTML;
+    btn.textContent = 'Processing payment…';
+    setTimeout(() => {
+      btn.style.opacity = '';
+      btn.innerHTML = html;
+      show('success');
+    }, 800);
+  });
+
+  /* ============ BACK BUTTONS ============ */
+  document.getElementById('backFromProfile').addEventListener('click', () => show('home'));
+  document.getElementById('backFromCheckout').addEventListener('click', () => show('profile'));
   document.getElementById('backHome').addEventListener('click', () => show('home'));
 
 })();

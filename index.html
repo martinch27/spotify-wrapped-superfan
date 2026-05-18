@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
 <meta name="theme-color" content="#000000" />
-<title>Spotify Wrapped 2025</title>
+<title>Spotify Wrapped 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -51,7 +51,7 @@
       <h2 class="section__title">Made for you, <span class="highlight">Martin</span></h2>
 
       <!-- THE WRAPPED CARD -->
-      <button class="wrapped-card" id="openWrapped" type="button" aria-label="Open your 2025 Wrapped">
+      <button class="wrapped-card" id="openWrapped" type="button" aria-label="Open your 2026 Wrapped">
         <div class="wrapped-card__lines">
           <svg viewBox="0 0 400 320" preserveAspectRatio="none" aria-hidden="true">
             <defs>
@@ -74,7 +74,7 @@
         </div>
         <div class="wrapped-card__body">
           <div class="wrapped-card__eyebrow">Wrapped</div>
-          <div class="wrapped-card__title">It's time for<br/>your 2025<br/>Wrapped.</div>
+          <div class="wrapped-card__title">It's time for<br/>your 2026<br/>Wrapped.</div>
         </div>
         <div class="wrapped-card__play" aria-hidden="true">
           <svg viewBox="0 0 24 24" width="22" height="22" fill="#000"><path d="M7 5v14l12-7z"/></svg>
@@ -213,7 +213,7 @@
     <!-- ====== SLIDE 5 — WRAP CARD ====== -->
     <article class="slide slide--wrap" data-slide="4">
       <div class="wrap-card">
-        <div class="wrap-card__year">2025</div>
+        <div class="wrap-card__year">2026</div>
         <div class="wrap-card__photo" style="background-image:url('carti-avatar.jpg')"></div>
         <div class="wrap-card__rows">
           <div class="wrap-row">
@@ -244,6 +244,220 @@
     <!-- Tap zones (invisible) -->
     <div class="tap tap--prev" id="tapPrev" aria-label="Previous"></div>
     <div class="tap tap--next" id="tapNext" aria-label="Next"></div>
+  </section>
+
+  <!-- ============ ARTIST PROFILE (locked SuperFan feed) ============ -->
+  <section class="screen screen--profile" id="profile">
+    <header class="subheader">
+      <button class="iconbtn" id="backFromProfile" aria-label="Back">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#fff" stroke-width="2.2"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <span class="subheader__title">Playboi Carti</span>
+      <span class="iconbtn" aria-hidden="true"></span>
+    </header>
+
+    <div class="profile">
+      <div class="profile__head">
+        <div class="profile__avatar">
+          <img src="carti-avatar.jpg" alt="Playboi Carti" />
+          <span class="profile__verified" aria-label="Verified">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="#000"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1 15-4-4 1.4-1.4L11 14.2l5.6-5.6L18 10z"/></svg>
+          </span>
+        </div>
+        <div class="profile__stats">
+          <div class="stat"><b>56</b><span>posts</span></div>
+          <div class="stat"><b>237K</b><span>fans</span></div>
+          <div class="stat"><b>42M</b><span>listeners</span></div>
+        </div>
+      </div>
+      <div class="profile__name">Playboi Carti</div>
+      <div class="profile__bio">yo mate 🩸 glad u here. let's make some shiiiit together 🔥</div>
+
+      <div class="profile__feed">
+        <article class="post-locked">
+          <header class="post-locked__head">
+            <div class="post-locked__avatar"><img src="carti-avatar.jpg" alt="" /></div>
+            <div class="post-locked__meta">
+              <div class="post-locked__name">Playboi Carti</div>
+              <div class="post-locked__time">AUDIO · 2h</div>
+            </div>
+          </header>
+          <div class="post-locked__body">
+            <span class="post-locked__lock">
+              <svg viewBox="0 0 24 24" width="44" height="44" fill="currentColor"><path d="M17 9V7a5 5 0 0 0-10 0v2H5v12h14V9zM9 7a3 3 0 0 1 6 0v2H9zm3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg>
+            </span>
+          </div>
+          <button type="button" class="post-locked__cta"><svg viewBox="0 0 24 24" width="14" height="14"><path d="M17 9V7a5 5 0 0 0-10 0v2H5v12h14V9zM9 7a3 3 0 0 1 6 0v2H9zm3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg>Unlock for $4.99</button>
+        </article>
+
+        <article class="post-locked">
+          <header class="post-locked__head">
+            <div class="post-locked__avatar"><img src="carti-avatar.jpg" alt="" /></div>
+            <div class="post-locked__meta">
+              <div class="post-locked__name">Playboi Carti</div>
+              <div class="post-locked__time">PHOTO · 5h</div>
+            </div>
+          </header>
+          <div class="post-locked__body">
+            <span class="post-locked__lock">
+              <svg viewBox="0 0 24 24" width="44" height="44" fill="currentColor"><path d="M17 9V7a5 5 0 0 0-10 0v2H5v12h14V9zM9 7a3 3 0 0 1 6 0v2H9zm3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg>
+            </span>
+          </div>
+          <button type="button" class="post-locked__cta"><svg viewBox="0 0 24 24" width="14" height="14"><path d="M17 9V7a5 5 0 0 0-10 0v2H5v12h14V9zM9 7a3 3 0 0 1 6 0v2H9zm3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg>Unlock for $4.99</button>
+        </article>
+
+        <article class="post-locked">
+          <header class="post-locked__head">
+            <div class="post-locked__avatar"><img src="carti-avatar.jpg" alt="" /></div>
+            <div class="post-locked__meta">
+              <div class="post-locked__name">Playboi Carti</div>
+              <div class="post-locked__time">VIDEO · yesterday</div>
+            </div>
+          </header>
+          <div class="post-locked__body">
+            <span class="post-locked__lock">
+              <svg viewBox="0 0 24 24" width="44" height="44" fill="currentColor"><path d="M17 9V7a5 5 0 0 0-10 0v2H5v12h14V9zM9 7a3 3 0 0 1 6 0v2H9zm3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg>
+            </span>
+          </div>
+          <button type="button" class="post-locked__cta"><svg viewBox="0 0 24 24" width="14" height="14"><path d="M17 9V7a5 5 0 0 0-10 0v2H5v12h14V9zM9 7a3 3 0 0 1 6 0v2H9zm3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg>Unlock for $4.99</button>
+        </article>
+
+        <article class="post-locked">
+          <header class="post-locked__head">
+            <div class="post-locked__avatar"><img src="carti-avatar.jpg" alt="" /></div>
+            <div class="post-locked__meta">
+              <div class="post-locked__name">Playboi Carti</div>
+              <div class="post-locked__time">VIP DROP · 2d</div>
+            </div>
+          </header>
+          <div class="post-locked__body">
+            <span class="post-locked__lock">
+              <svg viewBox="0 0 24 24" width="44" height="44" fill="currentColor"><path d="M17 9V7a5 5 0 0 0-10 0v2H5v12h14V9zM9 7a3 3 0 0 1 6 0v2H9zm3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg>
+            </span>
+          </div>
+          <button type="button" class="post-locked__cta"><svg viewBox="0 0 24 24" width="14" height="14"><path d="M17 9V7a5 5 0 0 0-10 0v2H5v12h14V9zM9 7a3 3 0 0 1 6 0v2H9zm3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg>Unlock for $4.99</button>
+        </article>
+
+        <article class="post-locked">
+          <header class="post-locked__head">
+            <div class="post-locked__avatar"><img src="carti-avatar.jpg" alt="" /></div>
+            <div class="post-locked__meta">
+              <div class="post-locked__name">Playboi Carti</div>
+              <div class="post-locked__time">POST · 3d</div>
+            </div>
+          </header>
+          <div class="post-locked__body">
+            <span class="post-locked__lock">
+              <svg viewBox="0 0 24 24" width="44" height="44" fill="currentColor"><path d="M17 9V7a5 5 0 0 0-10 0v2H5v12h14V9zM9 7a3 3 0 0 1 6 0v2H9zm3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg>
+            </span>
+          </div>
+          <button type="button" class="post-locked__cta"><svg viewBox="0 0 24 24" width="14" height="14"><path d="M17 9V7a5 5 0 0 0-10 0v2H5v12h14V9zM9 7a3 3 0 0 1 6 0v2H9zm3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg>Unlock for $4.99</button>
+        </article>
+
+        <article class="post-locked">
+          <header class="post-locked__head">
+            <div class="post-locked__avatar"><img src="carti-avatar.jpg" alt="" /></div>
+            <div class="post-locked__meta">
+              <div class="post-locked__name">Playboi Carti</div>
+              <div class="post-locked__time">AUDIO · 4d</div>
+            </div>
+          </header>
+          <div class="post-locked__body">
+            <span class="post-locked__lock">
+              <svg viewBox="0 0 24 24" width="44" height="44" fill="currentColor"><path d="M17 9V7a5 5 0 0 0-10 0v2H5v12h14V9zM9 7a3 3 0 0 1 6 0v2H9zm3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg>
+            </span>
+          </div>
+          <button type="button" class="post-locked__cta"><svg viewBox="0 0 24 24" width="14" height="14"><path d="M17 9V7a5 5 0 0 0-10 0v2H5v12h14V9zM9 7a3 3 0 0 1 6 0v2H9zm3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg>Unlock for $4.99</button>
+        </article>
+
+        <article class="post-locked">
+          <header class="post-locked__head">
+            <div class="post-locked__avatar"><img src="carti-avatar.jpg" alt="" /></div>
+            <div class="post-locked__meta">
+              <div class="post-locked__name">Playboi Carti</div>
+              <div class="post-locked__time">VIDEO · 1w</div>
+            </div>
+          </header>
+          <div class="post-locked__body">
+            <span class="post-locked__lock">
+              <svg viewBox="0 0 24 24" width="44" height="44" fill="currentColor"><path d="M17 9V7a5 5 0 0 0-10 0v2H5v12h14V9zM9 7a3 3 0 0 1 6 0v2H9zm3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg>
+            </span>
+          </div>
+          <button type="button" class="post-locked__cta"><svg viewBox="0 0 24 24" width="14" height="14"><path d="M17 9V7a5 5 0 0 0-10 0v2H5v12h14V9zM9 7a3 3 0 0 1 6 0v2H9zm3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg>Unlock for $4.99</button>
+        </article>
+
+        <article class="post-locked">
+          <header class="post-locked__head">
+            <div class="post-locked__avatar"><img src="carti-avatar.jpg" alt="" /></div>
+            <div class="post-locked__meta">
+              <div class="post-locked__name">Playboi Carti</div>
+              <div class="post-locked__time">PHOTO · 1w</div>
+            </div>
+          </header>
+          <div class="post-locked__body">
+            <span class="post-locked__lock">
+              <svg viewBox="0 0 24 24" width="44" height="44" fill="currentColor"><path d="M17 9V7a5 5 0 0 0-10 0v2H5v12h14V9zM9 7a3 3 0 0 1 6 0v2H9zm3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg>
+            </span>
+          </div>
+          <button type="button" class="post-locked__cta"><svg viewBox="0 0 24 24" width="14" height="14"><path d="M17 9V7a5 5 0 0 0-10 0v2H5v12h14V9zM9 7a3 3 0 0 1 6 0v2H9zm3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg>Unlock for $4.99</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CHECKOUT ============ -->
+  <section class="screen screen--checkout" id="checkout">
+    <header class="subheader">
+      <button class="iconbtn" id="backFromCheckout" aria-label="Back">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#fff" stroke-width="2.2"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <span class="subheader__title">Payment</span>
+      <span class="iconbtn" aria-hidden="true"></span>
+    </header>
+
+    <div class="checkout">
+      <div class="checkout__summary">
+        <div class="checkout__row">
+          <div>
+            <div class="checkout__label">Subscription</div>
+            <div class="checkout__value">SuperFan · Essential</div>
+            <div class="checkout__sub">Playboi Carti</div>
+          </div>
+          <div class="checkout__price">$4.99</div>
+        </div>
+        <hr class="hr"/>
+        <div class="checkout__row checkout__row--total">
+          <div class="checkout__label">Total per month</div>
+          <div class="checkout__price">$4.99</div>
+        </div>
+      </div>
+
+      <div class="checkout__payment">
+        <div class="checkout__label-section">Payment method</div>
+        <button class="pay">
+          <span class="pay__icon">
+            <svg viewBox="0 0 32 14" width="44" height="20"><text x="0" y="11" font-family="-apple-system,Inter,Helvetica" font-size="12" font-weight="600" fill="#fff">Pay</text></svg>
+          </span>
+          <span class="pay__label">Apple Pay</span>
+          <span class="pay__check">●</span>
+        </button>
+        <button class="pay pay--alt">
+          <span class="pay__icon"><svg viewBox="0 0 36 24" width="32" height="20"><rect width="36" height="24" rx="3" fill="#1a1a1a" stroke="#444"/><rect x="4" y="14" width="28" height="3" fill="#444"/></svg></span>
+          <span class="pay__label">•••• 4242</span>
+        </button>
+      </div>
+
+      <p class="checkout__legal">
+        Subscription renews monthly. Cancel anytime in Spotify settings. First week — money-back guarantee.
+      </p>
+    </div>
+
+    <div class="cta-bar">
+      <button class="btn-primary btn-primary--full" id="goSuccess">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style="margin-right:6px;vertical-align:-3px"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1 15-4-4 1.4-1.4L11 14.2l5.6-5.6L18 10z"/></svg>
+        Subscribe for $4.99
+      </button>
+    </div>
   </section>
 
   <!-- ============ SUCCESS — after Become SuperFan ============ -->
