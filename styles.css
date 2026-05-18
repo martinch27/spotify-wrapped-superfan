@@ -413,14 +413,16 @@ body {
   line-height: .9;
   color: #7B5BFF;
   text-shadow: 3px 3px 0 #2A1505;
-  display: block;
-  width: 100%;
-  text-align: center;
-  /* italic skew adds ~6px to the right — small left offset keeps the
-     number visually centered between the slide edges */
-  padding-left: 6px;
-  box-sizing: border-box;
+  /* inline-block + nowrap = the element is the exact width of the
+     visible digits, so the flex parent's align-items: center centers
+     the actual rendered block (not a 100% wide container).
+     translateX(-4px) compensates for the italic skew + bottom-right
+     text-shadow that visually nudge the ink slightly right of the
+     geometric center. */
+  display: inline-block;
   white-space: nowrap;
+  transform: translateX(-4px);
+  max-width: 100%;
 }
 
 /* slide 3 — GENRES */
@@ -972,9 +974,11 @@ body {
   to   { opacity: 1; }
 }
 @keyframes numberPop {
-  0%   { opacity: 0; transform: scale(.55) rotate(-4deg); }
-  60%  { opacity: 1; transform: scale(1.06); }
-  100% { transform: scale(1) rotate(0); }
+  /* translateX(-4px) on every frame so the italic-skew + shadow
+     compensation isn't overridden when the animation finishes. */
+  0%   { opacity: 0; transform: translateX(-4px) scale(.55) rotate(-4deg); }
+  60%  { opacity: 1; transform: translateX(-4px) scale(1.06); }
+  100% {              transform: translateX(-4px) scale(1) rotate(0); }
 }
 @keyframes ringExpand {
   from { opacity: 0; transform: scale(.7); }
